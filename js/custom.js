@@ -104,9 +104,18 @@ $(document).ready(function () {
     });
 
     //animatedModal
-    $("#demo01,#demo02,#demo03,#demo04,#demo05,#demo06,#demo07,#demo08,#demo09").animatedModal();
+    var selectedProfileId
+    $('.portfolio_item').click((e) => {
+        e.preventDefault();
+        selectedProfileId = e.currentTarget.id
+        $('.profileModal').hide()
+        $(`.profileModal-${selectedProfileId}`).show()
+    })
 
-    // Contact Form 	
+    $("#demo01,#demo02,#demo03,#demo04,#demo05,#demo06,#demo07,#demo08,#demo09,#demo10").animatedModal();
+
+
+    // Contact Form
 
     // validate contact form
     $(function () {
